@@ -1,0 +1,13 @@
+{
+  "name": "civitai-tag-search",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Civitai image/video tag-search browser extension",
+  "scripts": {
+    "test": "node --test test/core.test.cjs",
+    "test:browser": "node test/browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

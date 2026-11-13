@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Civitai Tag Search</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="layout.css">
+  <script src="core.js" defer></script>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <header><img src="icons/icon48.png" width="36" height="36" alt="" aria-hidden="true"><div><h1>Find your scene</h1><p>Civitai image & video tags</p></div><span class="badge">SFW + NSFW</span></header>
+  <main>
+    <label class="label" for="query">What are you looking for?</label>
+    <div class="search"><span aria-hidden="true">⌕</span><input id="query" type="search" placeholder="Woman, sunset, cyberpunk…" maxlength="100" autocomplete="off" autofocus><kbd>↵</kbd></div>
+    <div class="controls">
+      <fieldset><legend class="sr-only">Media type</legend><label><input type="radio" name="media" value="image" checked><span>Images</span></label><label><input type="radio" name="media" value="video"><span>Videos</span></label></fieldset>
+      <label class="site-label"><span class="sr-only">Website</span><select id="host"><option value="civitai.com">civitai.com</option><option value="civitai.red">civitai.red</option></select></label>
+    </div>
+    <div class="results-header"><h2 id="results-title">Start with a tag</h2><span id="catalog-count"></span></div>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <div id="suggestions" class="suggestions" aria-label="Matching and similar tags"></div>
+    <button id="live-check" class="text-button" type="button">Check live image tags</button>
+    <p id="live-note" class="fineprint">Live lookup uses an open Civitai tab. Saved tags work immediately.</p>
+    <section class="selection"><div class="results-header"><h2>Selected tags</h2><button id="clear" class="text-button" type="button">Clear</button></div><div id="selected" class="chips"><span class="empty">Choose a tag above to create your link.</span></div><p class="fineprint">Add several tags to narrow the gallery.</p></section>
+  </main>
+  <section class="destination"><label class="label" for="link">Your filtered gallery</label><input id="link" readonly placeholder="Select a tag first" aria-label="Generated gallery link"><div class="actions"><button id="open" class="primary" type="button" disabled>Open images <span aria-hidden="true">↗</span></button><button id="copy" class="secondary" type="button" disabled>Copy link</button></div></section>
+  <footer>NSFW tags included. Results follow Civitai’s content settings.</footer>
+</body>
+</html>
